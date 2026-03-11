@@ -112,4 +112,8 @@ intval($answer, 0)等于 47
 
 然后它这里有个抽象的地方是一个技能还有升级，直接输入CycloneSlash显示盗版(这脑洞也是逆天)，得提升版本：
 
-·
+<img width="3012" height="703" alt="image" src="https://github.com/user-attachments/assets/d234a07b-1766-4712-91d2-ae9c99f981a4" />
+
+最后再访问一下得到我们的flag，这里就不贴出来了。
+
+week1至此结束
