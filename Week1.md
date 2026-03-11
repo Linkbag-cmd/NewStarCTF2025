@@ -49,4 +49,28 @@ intval($answer, 0)等于 47
 
 
 
+**strange_login**
+
+<img width="1150" height="730" alt="image" src="https://github.com/user-attachments/assets/fa023f9e-e93f-49d2-a864-87a6172d7438" />
+
+很明显是SQL注入，输一下就能得到flag  admin' or 1=1 #   
+
+<img width="1300" height="626" alt="image" src="https://github.com/user-attachments/assets/f66f0030-38f3-4fc4-95f3-abeee2961a0d" />
+
+
+
+**别笑，你也过不了第二关**
+
+竟然还是魔丸....  这种题目一般正常完肯定是不行的，看一下源代码发现这么一个东西：
+
+<img width="771" height="329" alt="image" src="https://github.com/user-attachments/assets/5a94b315-a917-4dcc-9232-1bff3e122084" />
+
+第二关要100000分肯定是不可能的，我们肯定要改数据，抓个包看看....然后发现抓不到，那就尝试改数据：
+
+<img width="1373" height="330" alt="image" src="https://github.com/user-attachments/assets/bddcee7a-b4ee-486b-af3b-00c7870f4117" />
+
+然后就能拿到我们的flag了：
+
+<img width="907" height="149" alt="image" src="https://github.com/user-attachments/assets/7115651a-12de-4737-8244-301032301a0e" />
+
 
