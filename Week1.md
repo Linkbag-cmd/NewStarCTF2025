@@ -11,6 +11,9 @@
 <img width="1571" height="354" alt="image" src="https://github.com/user-attachments/assets/5df475a6-ecc3-40c4-99a1-811cdf8a93df" />
 
 
+
+
+
 **宇宙的中心是 PHP**
 
 进去是一个动画界面，f12，右键啥的按不出来，但是依旧可以手动调用开发者界面，或者ctrl+shift+I调出来，发现：
@@ -49,6 +52,8 @@ intval($answer, 0)等于 47
 
 
 
+
+
 **strange_login**
 
 <img width="1150" height="730" alt="image" src="https://github.com/user-attachments/assets/fa023f9e-e93f-49d2-a864-87a6172d7438" />
@@ -56,6 +61,8 @@ intval($answer, 0)等于 47
 很明显是SQL注入，输一下就能得到flag  admin' or 1=1 #   
 
 <img width="1300" height="626" alt="image" src="https://github.com/user-attachments/assets/f66f0030-38f3-4fc4-95f3-abeee2961a0d" />
+
+
 
 
 
@@ -74,3 +81,35 @@ intval($answer, 0)等于 47
 <img width="907" height="149" alt="image" src="https://github.com/user-attachments/assets/7115651a-12de-4737-8244-301032301a0e" />
 
 
+
+
+
+**黑客小 W 的故事（1）**
+
+要800块钱，但是容易被干掉，看到提示有显示：
+
+<img width="2111" height="573" alt="image" src="https://github.com/user-attachments/assets/7224d5c1-f31f-48b7-95e6-2a582a30012a" />
+
+那就抓个包：
+
+<img width="2313" height="647" alt="image" src="https://github.com/user-attachments/assets/bbed017a-48d6-48ff-bd6e-b150affffb34" />
+
+可以看到直接转到level2去了，依旧看提示：
+
+<img width="1983" height="499" alt="image" src="https://github.com/user-attachments/assets/814dcd55-03bd-440d-9594-f876b9e27aa9" />
+
+按照上述要求输入即可：
+
+<img width="2642" height="715" alt="image" src="https://github.com/user-attachments/assets/edf2c2f1-539b-493c-927d-bb222287e205" />
+
+提示有新要求，这个得抓包了：
+
+<img width="1434" height="674" alt="image" src="https://github.com/user-attachments/assets/ace34879-01b1-4e3a-afac-e5b60dedb410" />
+
+后面再回到页面就能看到显示/Level2_END，那么我们再访问这个界面，经过一系列的对话后查看相应提示，也算是对http基础的一个熟悉吧：
+
+<img width="1927" height="321" alt="image" src="https://github.com/user-attachments/assets/3241af2b-74a6-4ad0-a9e4-73ad47c4d2a6" />
+
+然后它这里有个抽象的地方是一个技能还有升级，直接输入CycloneSlash显示盗版(这脑洞也是逆天)，得提升版本：
+
+·
