@@ -116,4 +116,15 @@ intval($answer, 0)等于 47
 
 最后再访问一下得到我们的flag，这里就不贴出来了。
 
+
+
+
+
+**我真得控制你了**
+
+这里面开发者工具快捷键被禁用了，可以自己手动打开或者抓个包：
+
+<img width="1042" height="251" alt="image" src="https://github.com/user-attachments/assets/4ca7ca1e-bfbb-4408-972a-bc03c6309488" />
+
+
 week1至此结束
