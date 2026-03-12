@@ -129,6 +129,7 @@ session每次都是动态刷新的，来自于访问/home时的session....应该
 | `cat /flag,base64` | `cat /flag`：读 /flag 文件 | `base64`：编码输出 | base64 编码的 flag 内容 |
 | `ls -la,grep ^d` | `ls -la`：详细列出文件（含隐藏） | `grep ^d`：只显示以 d 开头的（目录） | 只看到目录列表 |
 | `env,grep -E 'flag,secret,key'` | `env`：所有环境变量 | `grep -E`：正则匹配多个关键词 | 显示含 flag/secret/key 的环境变量 |
-(md表格里面搞不出管道,将就看一下)
+
+md表格里面搞不出管道,将就看一下
 
 
